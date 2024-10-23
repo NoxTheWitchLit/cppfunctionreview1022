@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+double rectanglearea(double width, double height);
+bool isPrime(int n);
+int sumDigits(int n);
+
+int main() {
+	cout << rectanglearea(10, 10) << endl;
+	isPrime(7);
+	cout << sumDigits(35) << endl;
+	cout << sumDigits(137);
+
+}
+
+double rectanglearea(double width, double height) {
+	
+	return width * height;
+}
+
+bool isPrime(int n) {
+	if (n % 2 != 0) {
+		cout << "number is prime" << endl; 
+		return true;
+		
+	}
+	else {
+		cout << "number is NOT prime" << endl; 
+		return false;
+		
+	}
+}
+
+int sumDigits(int n) { //accepts numbers up to 999
+	int digit1 = n % 10;
+	int digit2 = n / 10;
+	int digit3;
+	int sum;
+	if (n >= 100) {
+		digit3 = n / 100;
+		digit2 = digit2 % 10;
+	}
+	else
+		digit3 = 0;
+	sum = digit1 + digit2 + digit3;
+	return sum;
+}
